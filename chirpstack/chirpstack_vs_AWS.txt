@@ -1,0 +1,28 @@
+Chirpstack vs AWS
+
+Pros of Chirpstack
+
+'Free'
+Managed in house, so complete control/retention of data
+Runs on HPC infrastructure where people have other applications which makes integration easier
+Simple data management with Postgres database or other endpoints
+If the Glensaugh hub is set up we can offer it as a free service to clients
+Can forward traffic on to AWS or other services if necessary
+
+
+Cons
+
+Potential uptime risk during maintenance
+Needs some buy-in from ITS to ensure smooth integration with existing Hutton IT systems
+
+
+
+Pros of AWS
+
+Proven technology
+
+
+Cons of AWS
+
+Not free; cost according to data volume
+Possible privacy concerns
