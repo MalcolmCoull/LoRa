@@ -1,0 +1,31 @@
+LoRa task list (including RETINA specific tasks (R))
+
+1a. Install Gateway at Glensaugh - DONE
+1b. Install Gateway at Balruddery
+
+(R1a1. Install soil sensors at Glensaugh)
+(R1a2. Install air quality sensor at Glensaugh)
+(R1a3. Install met station at Glensaugh)
+(R1b1. Install soil sensors at Balruddery) 
+(R1b2. Install air quality sensor at Balruddery) 
+
+2a. Create dedicated server on HPC/cluster
+2b. Install Chirpstack on server (including Mosquitto and other components)
+
+3a. Update Glensaugh Gateway firmware (see Configuration guide pdf)
+3b. Update Balruddery Gateway firmware
+
+4a. Create application 
+
+5 Add devices
+
+6 Create topics and publish
+
+7 Configure Mosquitto
+
+8 Subscribe on topics
+
+
+Notes
+
+RAK7249 to external Chirpstack - https://forum.rakwireless.com/t/chirpstack-rak7249/5140

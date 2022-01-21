@@ -1,0 +1,38 @@
+Steps after installing Chirpstack
+
+In Chirpstack dashboard:
+
+Create Organisation
+
+Is this the way to separate out projects? Can one gateway belong to multiple organisations?
+
+Create Network server
+
+
+
+Create Gateway Profile
+
+
+
+Create Service Profile
+
+
+
+Add Gateway
+
+
+
+
+
+Create Application
+
+
+
+Create Device Profile
+
+
+
+Add Device
+
+
+

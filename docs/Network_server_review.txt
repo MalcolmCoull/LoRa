@@ -1,0 +1,40 @@
+LoRaWAN options
+
+*** Current gateway model https://docs.rakwireless.com/Product-Categories/WisGate/RAK7249/Overview/ ***
+
+We need to have a LoRaWAN Network server to manage data being transmitted to/from devices via gateways.
+
+Options are to have private or public network, and a hosted/managed server, integrated (i.e. same hardware as the gateway) or self-managed solution.
+
+Good overview here: https://www.rs-online.com/designspark/lorawan-network-server-integrated-or-cloud-hosted-1
+
+And https://radiobridge.com/blog/lorawan-network-server-providers
+
+
+Hosted services
+
+The Things Network https://www.thethingsnetwork.org - free for development use
+
+The Things Industries https://www.thethingsindustries.com - commercial version of above, cost varies but starts at c$200/month
+
+Amazon Web Services https://aws.amazon.com/iot-core/lorawan/ - private network, price ???. NB our current gatewy(s) may be capable of connecting to AWS (see https://docs.rakwireless.com/Product-Categories/WisGate/RAK7249/Supported-LoRa-Network-Servers/#add-a-lorawan-device-to-aws-iot)
+
+Loriot https://www.loriot.io/index.html - free community server with unlimited gateways, one application and up to 30 devices. Also offer private and public enterprise servers, cost for up to 250 devices c £80/month
+
+Kerlink https://www.kerlink.com - WANESY is a 'small private network' solution. 
+
+Semtech https://lora-developers.semtech.com/build/network-server/ - based on Chirpstack (see below). Free but only 3 gateways/10 devices
+
+ResIOT https://www.resiot.io/en/ - free version 1 gateway/15 devices, volume pricing seems low (e.g. 4 gateways/50 devices for c $20/month)
+
+
+Self hosted/managed - needs techical expertise
+
+https://github.com/gotthardp/lorawan-server 
+
+Chirpstack https://www.chirpstack.io
+
+LoRaWAN via Things Stack on Azure https://techcommunity.microsoft.com/t5/internet-of-things/deploying-a-lorawan-network-server-on-azure/ba-p/1949338 - think the Things part is open source. Presumably needs Azure access?
+
+Google https://cloud.google.com/community/tutorials/setting-up-loraserver - free to set up, pricing depends on use of G Cloud
+

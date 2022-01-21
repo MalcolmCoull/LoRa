@@ -1,0 +1,282 @@
+Readme:
+
+Note: As of March 2021, all RAK's WisGate Edge gateways are running the new WisGateOS. This also requires a change in the version control of the firmware. That's why WisGateOS starts with version 1.x.x.
+
+====================WisGateOS V1.2.3====================
+
+Fixed:
+• WisDM device information error.
+
+
+====================WisGateOS V1.2.2====================
+
+Fixed:
+•       Starting from version 1.2.1, WAN Interface Protocol has lost multiple options such as pppoe, none, etc.
+
+
+
+====================WisGateOS V1.2.1====================
+New Features: 
+•	Support SX1303
+•	Support Wi-Fi Client static IP address configuration.
+•	Support AS923-2/3/4.
+
+Fixed: 
+•	Fix the air time don’t appear in packet logger page when the WisGateOS1.1.1 connected with AWS in Basics station mode in US915
+•	Fix Luci: LTE status in overview page - RSSI cannot be displayed. 
+•	Fix Luci error when switching region in advanced mode.
+•	Fix RAK7249 the LoRa Concentrator1 ‘Disable’ invalid in wisgateOS-1.1.1 advance mode.
+•	Fix the channel frequency changing in  WisGateOS1.1.2 if the region is in AS923, WisGateOS1.1.2  channel frequency can’t be changed in advance mode. 
+•	Fix multicast default pingslot datarate is not the protocol suggested value in class B in WisGateOS1.1.2. 
+•	Fix the application key can’t be changed in WisGateOS1.1.2 when export the nodes. 
+•	Fix the packet forwarder cycle reboot if the AS923 beacon is set in SF7 or SF11 in r213. 
+•	Fix the application ID verification missing in 1.0.1 if user use ABP class C and send downlink unicast via MQTT.
+•	Fix the beacon couldn’t be sent in WisGateOS1.1.1. 
+•	Fix the LoRa std button couldn’t be closed in Channel Plan advanced mode.
+
+====================WisGateOS V1.1.2====================
+Features
+
+Disable insecure ciphers.
+
+====================WisGateOS V1.1.1====================
+New features:
+1. Support Multiple WAN 
+2. Support customized breathing light
+3. WiFI IP address display in dashboard
+4. Support FTP feature
+
+Fixed:
+• uhttpd error in syslog: ERROR Connection Refused. 
+• Ethernet port can not work when switch to LAN mode. 
+• Switch wifi mode behavior.
+• The PingSlot Datarate can't be setted to DR0 in US915 RAK7249-r213 if the mode is built in NS.
+• The PingSlot Datarate can't be setted to DR0 in IN865 RAK7249.
+
+====================WisGateOS V1.0.2====================
+Fixed:
+•	Fix Wi-Fi client can not associate to the hidden SSID. 
+•	Fix critical dropbear security issue to improve the security capability. 
+•	Fix switch wifi mode behavior. 
+•	Fix Luci Wi-Fi work mode error in safari.
+•	Fix lora channel plan calculation update. 
+
+====================WisGateOS V1.0.1====================
+Changelogs:
+Features
+•    Support days (D) in uptime. 
+•    Show model name and WisGate OS version in SSH banner. 
+•    Update RAK logo and theme. 
+•    Support RAK7268.
+•    Support WisDM.
+UI Updating points:
+•    Integrated WisDM agent in navigation tree and the flash image is disabled in WisGateOs by default. 
+
+====================V1.2.0065_Release_r209====================
+Update note:
+Fixed bug in LoRa Basics Station Protocol related to Certificate use. 
+
+====================V1.2.0064_Release_r208====================
+Update note:
+LoRa network is divided into three working modes: Packet forwarder / Basic station / Network Server.
+LoRa Network Server: Support Class B mode in Region : CN470/US915/EU868/IN865/KR920/AS923 (Only for WisGate Edge Prime/Max).
+LoRa Network Server: Support Class B/C Multicast in Region CN470/US915/EU868/IN865/KR920/AS923.
+LoRa Network Server: Support AWS-IoT integration (Global Integration).
+LoRa Network Server: Support LoRaWAN 1.0.3 end nodes.
+Basic Station : Support LoRa Packet logger & LoRa Radio statistic in Basic Station Mode.
+Basic Station : update version to 2.0.5.
+Network: Support Ethernet port mode selection (LAN or WAN).
+
+Known issues:
+Class B / Multicast not support  in Region AU915 (Beacon format error).
+Before the system time is synchronized with the network, the Class B mode cannot work.If the user uses external NS, the external NS needs to have a time calibration mechanism, otherwise the time deviation will affect the use of class B.
+When the device is reconfigured or restarted, the multicast group downlink frame counter will be reset. Restart node and gateway at the same time.
+
+====================V1.1.0063_Release_r205====================
+Update note:
+1. Logical adjustment of lora network server application
+2. Supports packet forwarder UDP packet DGRAM MTU setting for preventing the packet loss caused by UDP packet fragmentation,
+and solves the problem that auto data recovery mechanism sends buffer message circularly after the network recovery.
+3. The firmware of neutral version supports custom logo and theme color settings.
+4. Fixed missing the WiFi AP disable/enable button. Fixed the bug that WiFi configuration doesn't take effect in some cases. Fixed the bug that AP SSID cannot be searched after the STA connection failure.
+5. Supports Openvpn connection status and virtual interface IP address display
+6. Fixed the bug that End device parameter initialization error when using lora network server in EU868/US915 region.
+7. Supports to select 16 channel plan quickly for the 16 channel gateway.
+8. Supports automatic repair function for SD card file system, to prevent the SD card file system damage caused by abnormal power failure of gateway.
+9. Fix other bugs.
+
+====================V1.1.0062_Release_r202====================
+Update note:
+1. Supports Basic Station packet forwarder
+2. Update OpenVPN to version 2.4.3
+3. Fix bug: OpenVPN custom configuration page error
+4. Adjust the WiFi client network search logic to prevent the WiFi AP from being inaccessible for a long time after the WiFi client is misconfigured.
+
+====================V1.1.0061_Release_r199====================
+Update note:
+1. Fix bug: the packet forwarder hangs up in probability after the server's domain name resolution failed (such as network interruption).
+2. OpenVPN: Supports input the OpenVPN configuration file for configuration.
+3. LoRaGateway MQTT Bridge: Supports the output of more detailed logs and mqtt connection logs.
+4. Update the system-certification / ca-bundle version.
+5. Update the self signed certificate of the web server, using the RAK self signed CA to issue the uhttpd certificate. 
+    And solving the problem that the web console cannot be accessed when the latest version of Chrome Browser certificate cannot be verified.
+6. Build in LoRa Server: Supports setting the payload format.
+7. Packet Forwarder: Supports setting non LoRaWAN protocol.
+8. Update the firewall default settings of alias IP.
+
+====================V1.1.0060_Release_r198====================
+Update note:
+1. Build-in LoRa Network Server & LoRa MQTT Gateway Bridge supports MQTT V3.1.1 protocol;
+2. Fix bug: Abnormal restart of packet forwarder process; (r159 version introduced)
+3. Fix bug: The problem in Build-in LoRa Network Server that the downlink packet cannot be sent out after it exceeds 150 bytes;
+
+====================V1.1.0059_Release_r197====================
+Update note:
+1. Supports RU864-870 Frequency for Packet forwarder and LoRa Network Server
+2. Fix bug: can't open LoRa Packet logger page in some cases
+3. Fix bug：LoRa Gateway Bridge can't be set to loraserver 2.x and loraserver 3.x (protobuf）
+
+====================V1.1.0058_Release_r196====================
+Update note:
+1. lora gateway bridge: supports V3.x JSON format of chripstack Gateway Backend
+2. Add packet log for lora gateway bridge and lora network server 
+
+====================V1.1.0057_Release_r195====================
+Update note:
+1. Supports DDNS （Test version）
+2. Fix bug：build-in lora network server - Modifying the application key is only valid for new added nodes
+3. Fix bug：build-in lora network server - After the ADR is turned on, when the uplink message is retransmitted, the abnormal adjustment of ADR will be triggered sometimes.
+4. Fix bug：build-in lora network server - HTTP interface configure HTTP header does not take effect.
+5. The new OpenVPN configuration interface which simplifies the OpenVPN configuration parameters and facilitates the quick configuration of OpenVPN tunnel.
+6. Fix bug: On the wireless configuration page, click the disable AP mode and the station mode will not work.
+
+(Station mode cannot work alone, so AP mode can only be hidden and cannot be disabled)
+7. Rich the packet forwarder data statistics.
+
+====================V1.1.0056_Release_r193====================
+Update note:
+1. Fix bug: Packet logger cannot display packet log in IE browser or 360 browser.
+2. Fix bug: When build-in lora network server is configured to hexstring encoding, data payload is one byte more.
+
+====================V1.1.0055_Release_r192====================
+Update note:
+1. Global integration interface supports custom mqtt function in Build-in LoRa Network Serve.
+2. Supports showing the unsuccessful downlink packet in packet logger.
+3. Supports LPTP protocol RAK private packet splitting / assembling protocol).
+4. Fix bug: The built-in NS cannot synchronize the channel through MAC command in KR920 band.
+5. Fix bug：Packet forwarder is unable to send downlink packet in class C mode.(r188 version introduced)
+
+====================V1.1.0054_Release_r190====================
+Update note:
+1. Solve the bug that the added application failed to automatically add nodes. (r187 version introduced)
+
+
+2. The AU915 band supports the modification of UplinkDwellTime parameter.
+
+====================V1.1.0053_Release_r188====================
+Update note:
+1. LoRa Network Server: Supports configure LoRa Device frame couter width（16bit or 32bit).
+2. LoRa Packet Logger ：Supports show MAC Command / TxPower.
+3. LoRa Network Server: Supports LoRaWAN network statistics and statistical information graphical display of LoRa Device.
+4. Fix bug ：RX2 parameters are not updated after synchronization via MAC command.
+5. Fix bug : When LoRa Gateway MQTT Bridge is in loraserver 3.x mode, the format of GPS timestamp is wrong, which results in loraserver error.
+6. Database is transferred to RAMDisk and copied to TF card regularly when system running. System logs are stored to RAMDisk and regularly (or when the log file is too large) compress and copy to TF card.(Prevent frequent reading and writing of TF card from damaging TF card file system in case of abnormal power off.)
+7. Fix bug: Under specific conditions, automatic addition of LoRa Devices causes the problem of repeated LoRa Devices.
+8. LoRa Network Server：Supports to turn off LoRa radio information in the data sent to third-party servers, which helps reduce traffic consumption.
+9. LoRa Network Server:  Do not send retransmitted data to a third-party server.
+10. Fix bug: Under certain conditions, the bug that the message is discarded after the frame counter counter is flipped.
+11. LoRa Network Server: Do not send message with Fport 0 to the third party server.
+
+
+====================V1.1.0050_Release_r184====================
+Update note:
+1. LoRa Gateway Bridge: Supports loraserver 3.x interface protocol
+2. LoRa Network Server: Solve the problem of FCNT counting error in ClassC mode
+3. Solve the problem that the ACK message can't be sent in some cases in ClassC mode
+
+====================V1.1.0049_Release_r182====================
+Update note:
+1. LoRa Network Server：Supports HTTP/HTTPS Protocol for Data Forwarding Interface
+2. LoRa Network Server: Optimizing the Index Structure of Database and Improving the Performance of Database
+3. LoRa Network Server: Supports batch addition of nodes in ABP mode
+4. LoRa Network Server: Fix the bug: Cannot display all messages when traffic of the Live data frame is high
+5. LoRa Packet forwarder: Supports to modify the log level, reduce the default log level, reduce the log traffic under the default configuration
+
+====================V1.1.0048_Release_r180====================
+Update note:
+1. LoRa Network Server: supports setup the ADR margin / Rx1Delay / Rx1DrOffset / Rx2DataRate / Rx2Frequency for network parameter settings; Network parameters of the node supporting synchronization through MAC Command.
+2. LoRa Network Server License
+3. Packet forwarder supports Frequency Sub-Band Fast Selection for CN470/US915/AU915 regions.
+4. Wi-Fi supports AP+STA hybrid working mode
+5. Automatic Detection of Hot Plug-in for Ethernet interface
+6. Fix bug
+7. LoRa Network Server: supports random generation of AppEUI and AppKEY
+
+====================1.1.0045_Release_r176====================
+Update note:
+1. Support OpenVPN
+
+
+2. Add Watchdog
+
+ process for LTE module connection management
+3. Add IST Time Zone (Indian Standard Time)
+
+
+4. Built-in server supports sending downlink package in WEB UI
+
+
+5. Packet forwarder supports storage the package automatically when network is disconnected
+
+====================1.1.0043_Release_r173====================
+Update note:
+1. Built-in loraserver supports adding App EUI / App Key parameters and supports Lora device automatic registration function.
+
+
+2. Supports batch deletion of Lora devices
+
+ in Built-in loraserver
+3. Supports resetting Lora device frame counter in Built-in loraserver 
+
+4. Add the loraserver status indicator in status overview page
+
+
+5. loraserver/loragateway bridge MQTT client supports Qos/Retain/Clean Session configuration options
+
+
+6. Modify the login page UI
+
+
+7. Add the Neutral Version (No Logo)
+
+====================V1.1.0042_Release_r172====================
+Update note:
+1. Solve the Built-in LoRa server can't send the downlink data in CLASS C mode
+2. syslog page refresh automatically
+3. Solve message type of the loraserver web->live frame display errors
+
+====================V1.1.0041_Release_r170====================
+Update note:
+1. Delete Save button of the packet forwarder page
+2. Add standard spectrum setting mode in packet forwarder page
+3. Can't add the gateway itself in the loraserver->Gateway page
+4. loraserver->application->device packet monitor window supports downlink packet display
+5. Support LoRaServer database files automatically stored in TF card.
+6. Support system logs are automatically saved to TF card.
+
+====================V1.1.0040_Release_r167====================
+Update note:
+1. Built-in LoRa server supports EU433 band
+
+
+2. Built-in LoRa server supports external gateway access
+
+
+3. Adjust the mqtt configuration parameters with built-in LoRa server/loRa gateway bridge-authentication mode supporting CA signature
+
+
+4. Web UI removes the LAN/static-route configuration page
+
+====================V1.1.0039_Release_r164====================
+Update note:
+1.Support Build-in LoRa Network Server
