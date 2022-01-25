@@ -1,5 +1,7 @@
 Chirpstack vs AWS
 
+Point to note: Actual setup process for gateway & sensors is very similar on both platforms. We have implemented and tested on both.
+
 Pros of Chirpstack
 
 'Free'
@@ -20,9 +22,10 @@ Needs some buy-in from ITS to ensure smooth integration with existing Hutton IT 
 Pros of AWS
 
 Proven technology
+Certificates/tls stuff may be easier to implement there - right now we're sending plain text (encoded not encrypted) but web portal is secure (https)
 
 
 Cons of AWS
 
 Not free; cost according to data volume
-Possible privacy concerns
+Possible privacy concerns - particularly in terms of the location of data (server hosted in Ireland) and potential DPA/GDPR issues with Brexit
